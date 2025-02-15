@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>syight主题</title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+        <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/highlight.js/11.11.1/styles/github-dark.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/languages/go.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    
+<meta name="generator" content="Hexo 7.3.0"></head>
+<body>
+    <div id="header">
+    <ul>
+        
+            <li><a href="/">
+                首页
+            </a></li>
+        
+            <li><a href="/archives">
+                归档
+            </a></li>
+        
+    </ul>
+</div>
+    <div id="header-placeHolder-box"></div>
+    <!-- TODO: 添加文章目录 -->
+<div id="post">
+    <div id="post-title">
+    <div id="title">数字逻辑电路期末整理</div>
+    <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%A6%E6%A0%A1/" rel="tag">学校</a></li></ul>
+</div>
+    <div id="article-container">
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><blockquote>
+<p>复习数电的过程就是在不断思考，“这学期小米到底教了什么！？“。这个<del>出生</del>没有发雨课堂，也没有发任何资料。</p>
+</blockquote>
+<h1 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h1><h2 id="考点推断（Deduction）"><a href="#考点推断（Deduction）" class="headerlink" title="考点推断（Deduction）"></a>考点推断（Deduction）</h2><blockquote>
+<p>网安班考的题目：</p>
+</blockquote>
+<img src="https://ccccooh.oss-cn-hangzhou.aliyuncs.com/img/%E7%BD%91%E5%AE%89%E8%80%83%E7%9A%84%E9%A2%98.png" alt="网安考的题" style="zoom:50%;" />
+
+<h3 id="分值计算"><a href="#分值计算" class="headerlink" title="分值计算"></a>分值计算</h3><p><strong>分值</strong>：</p>
+<ul>
+<li><strong>选择填空</strong>：40分</li>
+<li><strong>大题</strong>： 60分<ul>
+<li><strong>组合逻辑电路</strong>：12分</li>
+<li><strong>时序逻辑电路</strong>：18分</li>
+<li><strong>三极管两种分析方法</strong>：15分</li>
+<li><strong>化简题</strong>：15分</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>补完全的个人推断：</p>
+<ul>
+<li><strong>选择题</strong>可能由一些进制转换和概念题组成，概念题来自书上划的一些句子。</li>
+<li><strong>时序逻辑电路</strong>题目类似于设计<code>n</code>进制加法器，减法器这种。</li>
+<li><strong>三极管两种分析</strong>方法，其一是根据三极管的状态判断电压，其二是根据电压判断状态（放大&#x2F;饱和&#x2F;截止）。</li>
+<li><strong>化简题</strong>就是逻辑代数式的化简，主要考察卡诺图化简（我猜的）。</li>
+</ul>
+</blockquote>
+<h3 id="复习思路地图"><a href="#复习思路地图" class="headerlink" title="复习思路地图"></a>复习思路地图</h3><p>其他会考的知识点：</p>
+<ol>
+<li>进制</li>
+<li>反码</li>
+<li>8421码</li>
+<li>基本逻辑符号及电路画法</li>
+<li>逻辑代数基本公式</li>
+<li>最小项</li>
+<li>卡诺图</li>
+<li>二极管（有几个公式）</li>
+<li>三极管（两个大题）</li>
+<li>三极管判断类型</li>
+<li>编码器</li>
+<li>加法器&#x2F;减法器</li>
+<li>组合逻辑电路</li>
+<li>三线八线译码器</li>
+<li>触发器及特性方程</li>
+</ol>
+<h2 id="逻辑代数基本运算"><a href="#逻辑代数基本运算" class="headerlink" title="逻辑代数基本运算"></a>逻辑代数基本运算</h2><blockquote>
+<p>如果出现证明公式的题目，直接无脑画真值表即可。例如下图左右公式的证明：</p>
+<p><img src="https://ccccooh.oss-cn-hangzhou.aliyuncs.com/img/%E6%88%AA%E5%B1%8F2025-01-02%2014.17.52.png" alt="截屏2025-01-02 14.17.52"></p>
+</blockquote>
+<h3 id="结合律"><a href="#结合律" class="headerlink" title="结合律"></a>结合律</h3><p>$$<br>A+BC&#x3D;(A+B)(A+C)<br>$$</p>
+<h3 id="摩根定理（反演律）"><a href="#摩根定理（反演律）" class="headerlink" title="摩根定理（反演律）"></a>摩根定理（反演律）</h3><p>$$<br>\overline{A \cdot B}&#x3D;\overline{A}+\overline{B} \newline<br>\overline{A+B}&#x3D;\overline{A}\cdot \overline{B}<br>$$</p>
+<h2 id="逻辑代数常用公式"><a href="#逻辑代数常用公式" class="headerlink" title="逻辑代数常用公式"></a>逻辑代数常用公式</h2><h3 id="吸收律"><a href="#吸收律" class="headerlink" title="吸收律"></a>吸收律</h3><blockquote>
+<p>直接提取公因子即可</p>
+</blockquote>
+<p><img src="https://ccccooh.oss-cn-hangzhou.aliyuncs.com/img/%E6%88%AA%E5%B1%8F2025-01-02%2014.19.27.png" alt="截屏2025-01-02 14.19.27"></p>
+<p><img src="https://ccccooh.oss-cn-hangzhou.aliyuncs.com/img/%E6%88%AA%E5%B1%8F2025-01-02%2014.20.04.png" alt="截屏2025-01-02 14.20.04"></p>
+<blockquote>
+<p>使用<strong>分配律</strong>理解下式（本质是分配律的推广公式）</p>
+</blockquote>
+<p><img src="https://ccccooh.oss-cn-hangzhou.aliyuncs.com/img/%E6%88%AA%E5%B1%8F2025-01-02%2014.20.36.png" alt="截屏2025-01-02 14.20.36"></p>
+<h3 id="冗余律"><a href="#冗余律" class="headerlink" title="冗余律"></a>冗余律</h3><p><img src="https://ccccooh.oss-cn-hangzhou.aliyuncs.com/img/%E6%88%AA%E5%B1%8F2025-01-02%2014.23.16.png" alt="截屏2025-01-02 14.23.16"></p>
+<h2 id="最小项"><a href="#最小项" class="headerlink" title="最小项"></a>最小项</h2><p><strong>最小项</strong>一般是几个变量相与，如：$ABC$。每个变量以原变量或反变量的形式只出现一次。也就是说，对$A$，它只能以$A$或者$\overline{A}$的形式出现一次。</p>
+<p>将最小项用$m_i$表示的方法：</p>
+<ul>
+<li>将原变量作为$1$，反变量作为$0$，$ABC\to111$，$A\overline{B}C\to101$</li>
+<li>$m_i$中$i$就是这里二进制数的十进制数值，$A\overline{B}C\to 101 \to m_5$</li>
+</ul>
+<h2 id="码制"><a href="#码制" class="headerlink" title="码制"></a>码制</h2><h3 id="编码方式"><a href="#编码方式" class="headerlink" title="编码方式"></a>编码方式</h3><ul>
+<li><code>8421码</code>，又称<code>BCD码</code>。</li>
+<li><code>余3码</code>，在<code>BCD码</code>的基础上+<code>3</code>。</li>
+<li><code>格雷码</code>，又称<code>循环码</code>：特点是相邻项只有一位不同。</li>
+</ul>
+<h3 id="原码、反码和补码"><a href="#原码、反码和补码" class="headerlink" title="原码、反码和补码"></a>原码、反码和补码</h3><ul>
+<li><p><strong>原码</strong> &#x3D; <code>符号位</code>+<code>数值位</code>，其中符号位$1$表示负号，$0$表示正号。</p>
+</li>
+<li><p><strong>补码</strong>（余3码）</p>
+<ul>
+<li><strong>正数</strong>的补码就是他本身</li>
+<li><strong>负数</strong>的补码是反码$+1$</li>
+</ul>
+</li>
+<li><p><strong>反码</strong></p>
+<ul>
+<li><strong>正数</strong>的反码是他本身</li>
+<li><strong>负数</strong>的反码是其绝对值的每一位取反，注意一定要用<strong>零补足四位</strong>：三位补到四位，五位补到八位，以此类推。</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>符号为<code>1</code>表示正，<code>0</code>表示负。</p>
+<p>取反就是<code>1</code>变<code>0</code>，<code>0</code>变<code>1</code>。</p>
+</blockquote>
+<h2 id="基本逻辑符号"><a href="#基本逻辑符号" class="headerlink" title="基本逻辑符号"></a>基本逻辑符号</h2><blockquote>
+<p>基本逻辑符号一览：</p>
+</blockquote>
+<p><img src="https://ccccooh.oss-cn-hangzhou.aliyuncs.com/img/e47c04eef52d4fba84dec752463e4de4.png" alt="基本逻辑符号"></p>
+<blockquote>
+<p>异或门和与或门符号：</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th align="center">名称</th>
+<th align="center">逻辑符号</th>
+<th align="center">电路符号</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">异或门</td>
+<td align="center">$\oplus$</td>
+<td align="center"><img src="https://ccccooh.oss-cn-hangzhou.aliyuncs.com/img/image-1602161915624.png" alt="file" style="zoom:50%;" /></td>
+</tr>
+<tr>
+<td align="center">同或门</td>
+<td align="center">$\odot$</td>
+<td align="center"><img src="https://ccccooh.oss-cn-hangzhou.aliyuncs.com/img/image-1602163048424.png" alt="file" style="zoom:50%;" /></td>
+</tr>
+</tbody></table>
+<h2 id="加法器"><a href="#加法器" class="headerlink" title="加法器"></a>加法器</h2><h3 id="半加器"><a href="#半加器" class="headerlink" title="半加器"></a>半加器</h3><p><strong>输入</strong>：两个1位的二进制数</p>
+<p><strong>输出</strong>：进位+本位</p>
+<p><strong>特点</strong>：不考虑低位的进位。</p>
+<p><strong>规定符号</strong>：</p>
+<ul>
+<li>本位和 - <code>S</code></li>
+<li>半加进位 - <code>C</code></li>
+</ul>
+<p><strong>真值表</strong>：</p>
+<table>
+<thead>
+<tr>
+<th align="center">A</th>
+<th align="center">B</th>
+<th align="center">S</th>
+<th align="center">C</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">1</td>
+</tr>
+</tbody></table>
+<p><strong>逻辑表达式</strong>：<br>$$<br>S&#x3D;A\oplus B \newline<br>C&#x3D;AB<br>$$</p>
+<p><strong>逻辑符号</strong>：</p>
+<img src="https://p.ipic.vip/rf3hhy.jpg" alt="截屏2024-11-16 21.36.47" style="zoom:33%;" />
+
+<h3 id="全加器"><a href="#全加器" class="headerlink" title="全加器"></a>全加器</h3><p>全加器与半加器唯一的区别就是考虑了低位的进位，所以输入也增加了一个：低位的进位。</p>
+<p><strong>规定的符号</strong>：</p>
+<ul>
+<li>低位的进位：$C_{i-1}$</li>
+<li>向高位的进位：$C_i$</li>
+<li>本位：$S_i$</li>
+</ul>
+<hr>
+<p><strong>真值表</strong>：</p>
+<table>
+<thead>
+<tr>
+<th align="center">$A_i$</th>
+<th align="center">$B_i$</th>
+<th align="center">$C_{i-1}$</th>
+<th align="center">$S_i$</th>
+<th align="center">$C_i$</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">1</td>
+</tr>
+</tbody></table>
+<p><strong>逻辑表达式</strong>：<br>$$<br>S_i&#x3D;A_i \oplus B_i \oplus C_{i-1} \newline<br>C_i&#x3D;(A_i \oplus B_i)C_{i-1} + A_iB_i<br>$$</p>
+<p><strong>逻辑符号</strong>：</p>
+<img src="https://p.ipic.vip/dzzy0k.png" alt="截屏2024-11-16 21.44.20" style="zoom:33%;" />
+
+
+
+
+
+<h2 id="3线8线编码器"><a href="#3线8线编码器" class="headerlink" title="3线8线编码器"></a>3线8线编码器</h2><p><strong>芯片图</strong>：</p>
+<img src="https://p.ipic.vip/5fj5dx.jpg" alt="74LS48" width="400" style="zoom: 50%;" />
+
+<ul>
+<li>$\overline{I_0} - \overline{I_7}$：信号输入端</li>
+<li>$\overline{Y_2}、\overline{Y_1}、\overline{Y_0}$：编码输出端</li>
+<li>$\overline{ST}$：选通输入端</li>
+<li>$Y_s$：选通输出端</li>
+<li>$\overline{Y_{ES}}$：优先扩展输出端</li>
+</ul>
+<p>这里加了非号，表示将所有输入和输出取非，也就是说输入从之前的1有效变成了 0 才有效。</p>
+<p><strong>真值表</strong>：</p>
+<img src="https://p.ipic.vip/kiorfh.png" alt="截屏2024-11-17 23.33.40" style="zoom: 33%;" />
+
+
+
+<p>这里的$\overline{ST}$整体是0，那么$ST$的值就是1，也就是芯片正常工作，而$\overline{ST}$这个整体为1的时候，也就是$ST$为0，就表示芯片不工作。</p>
+<ul>
+<li>$Y_s$：编码器工作，但是无编码请求为低电平，对应第二行。</li>
+<li>$\overline{Y_{ES}}$编码器工作，并且有编码请求时为低电平，和$Y_s$是互斥的。</li>
+<li>在上面所有的输入中，$\overline{Y_7}$的优先级最高；$\overline{Y_0}$最低。</li>
+</ul>
+<h2 id="四个触发器"><a href="#四个触发器" class="headerlink" title="四个触发器"></a>四个触发器</h2><h3 id="RS-触发器"><a href="#RS-触发器" class="headerlink" title="RS 触发器"></a>RS 触发器</h3><img src="https://p.ipic.vip/rw3l0y.png" alt="截屏2024-11-20 22.08.34" height="300" style="zoom: 67%;" />
+
+<ul>
+<li>高电位触发（<code>1</code>触发）</li>
+</ul>
+<blockquote>
+<p> 记住<code>S</code>为<code>Set</code>置<code>1</code>，<code>R</code>为<code>Reset</code>置<code>0</code>。同时触不被允许，都不触发保持不变。</p>
+</blockquote>
+<p><strong>特性方程与约束条件</strong>：<br>$$<br>\begin{cases}<br>Q^{*}&#x3D;S+\overline{R}Q \newline<br>SR&#x3D;0 \<br>\end{cases}<br>$$</p>
+<h3 id="JK-触发器"><a href="#JK-触发器" class="headerlink" title="JK 触发器"></a>JK 触发器</h3><img src="https://p.ipic.vip/6q9p3a.png" alt="截屏2024-11-21 22.25.03" style="zoom: 50%;" />
+
+<ul>
+<li>高电位触发（<code>1</code>触发）</li>
+</ul>
+<blockquote>
+<p><code>J</code>相当于<code>Set</code>，<code>K</code>相当于<code>Reset</code>。都不触发时仍然保持，同时触发反转<code>Q</code>。</p>
+</blockquote>
+<p><strong>特性方程</strong>：<br>$$<br>Q^*&#x3D;J\overline{Q}+\overline{K}Q<br>$$</p>
+<h3 id="D-触发器"><a href="#D-触发器" class="headerlink" title="D 触发器"></a>D 触发器</h3><img src="https://ccccooh.oss-cn-hangzhou.aliyuncs.com/img/%E6%88%AA%E5%B1%8F2025-01-02%2016.49.49.png" alt="截屏2025-01-02 16.49.49" style="zoom:50%;" />
+
+<ul>
+<li>高电位触发（<code>1</code>触发）</li>
+</ul>
+<blockquote>
+<p>输入<code>D</code>是什么下一次状态就是什么。<code>1</code>直接控制下一次状态。</p>
+</blockquote>
+<p><strong>特性方程</strong>：<br>$$<br>Q^*&#x3D;D<br>$$</p>
+<h3 id="T-触发器"><a href="#T-触发器" class="headerlink" title="T 触发器"></a>T 触发器</h3><img src="https://ccccooh.oss-cn-hangzhou.aliyuncs.com/img/%E6%88%AA%E5%B1%8F2025-01-02%2016.48.21.png" alt="截屏2025-01-02 16.48.21" style="zoom:67%;" />
+
+<ul>
+<li>高电位触发（<code>1</code>触发）</li>
+</ul>
+<blockquote>
+<p><code>1</code>翻转，<code>0</code>保持。<code>1</code>控制是否翻转。</p>
+</blockquote>
+<p><strong>特性方程</strong>：<br>$$<br>Q^*&#x3D;\overline{T}Q+T\overline{Q} \newline<br>&#x3D;T\oplus Q<br>$$</p>
+<h2 id="三极管和二极管"><a href="#三极管和二极管" class="headerlink" title="三极管和二极管"></a>三极管和二极管</h2><h3 id="三极管"><a href="#三极管" class="headerlink" title="三极管"></a>三极管</h3><ol>
+<li>判断组成材料</li>
+</ol>
+<blockquote>
+<p>三极管在箭头的位置有一个固定的压降。</p>
+</blockquote>
+<ul>
+<li><p><strong>硅三极管</strong>：正向压降一般在 <strong>0.6V 到 0.7V</strong> 之间。</p>
+</li>
+<li><p><strong>锗三极管</strong>：正向压降一般在 <strong>0.2V 到 0.3V</strong> 之间。</p>
+</li>
+</ul>
+<ol start="2">
+<li>三极管三个分区：</li>
+</ol>
+<ul>
+<li>基极（<strong>Base</strong>）</li>
+<li>集电极（<strong>Collector</strong>）</li>
+<li>发射机（<strong>Emittor</strong>）</li>
+</ul>
+<ol start="3">
+<li>三极管的三种工作状态</li>
+</ol>
+<blockquote>
+<p>$P&gt;N$叫做<strong>正偏</strong>，$P&lt;N$叫做<strong>反偏</strong>。</p>
+</blockquote>
+<img src="https://ccccooh.oss-cn-hangzhou.aliyuncs.com/img/%E6%88%AA%E5%B1%8F2025-01-02%2015.02.51.png" alt="截屏2025-01-02 15.02.51" style="zoom:50%;" />
+
+
+
+<h2 id="期末大题（一）"><a href="#期末大题（一）" class="headerlink" title="期末大题（一）"></a>期末大题（一）</h2><ul>
+<li><strong>题干</strong>：用<strong>JK</strong>触发器设计有进位输出的同步<code>6</code>进制递增计数器；</li>
+</ul>
+<blockquote>
+<p><strong>Tip</strong>:网安班级考了<code>5</code>进制。</p>
+</blockquote>
+<ul>
+<li>步骤大纲：</li>
+</ul>
+<ol>
+<li>画出状态转换图：计数器的递增关系，如加法器相邻数之间写<code>1</code>表示进位，<code>0</code>表示不进位，最终体现在输出<code>Y</code>上。</li>
+<li>写出输出方程：根据所以相邻数之间的是否进位信息绘制卡诺图写出<code>Y</code>。</li>
+<li>写出时钟方程：无脑写$CLK_1&#x3D;CLK_2&#x3D;…CLK_n&#x3D;CLK$有几位写到几。</li>
+<li>求状态方程：写出当前状态$Q$与下一状态之间的转换关系$Q^<em>$，写出每一位$Q_n$和下一位之间的转换关系$Q^</em>_n$。</li>
+<li>写出驱动方程：根据$Q^*_n$与$Q_n$的关系写出每一个$J_n$&#x2F;$K_n$和$Q_n$的对应关系。</li>
+<li>画电路图：根据<code>驱动方程</code>+<code>状态方程</code>的信息划出电路图。</li>
+<li>验证能否自启动：带入无效状态看看是否能自启动。</li>
+</ol>
+<p><img src="https://ccccooh.oss-cn-hangzhou.aliyuncs.com/img/%E5%90%8C%E6%AD%A5%E6%97%B6%E5%BA%8F%E9%80%BB%E8%BE%91%E7%94%B5%E8%B7%AF.jpg" alt="小米原图流出"></p>
+<h2 id="期末大题（二）"><a href="#期末大题（二）" class="headerlink" title="期末大题（二）"></a>期末大题（二）</h2><ul>
+<li><strong>原图</strong>：</li>
+</ul>
+<img src="https://ccccooh.oss-cn-hangzhou.aliyuncs.com/img/%E4%B8%89%E6%9E%81%E7%AE%A12.jpg" style="zoom: 15%;" />
+
+<ul>
+<li><strong>题干</strong>：在一个放大电路中有个正常工作的晶体管，测得三个电极的电位分别为$6V,3V,2.3V$。问：</li>
+</ul>
+<ol>
+<li>确定晶体管的电极</li>
+<li>说明晶体管是硅管还是锗管：压降硅<code>0.6~0.7</code>，锗<code>0.2~0.3</code></li>
+<li>是$NPN$型还是$PNP$型</li>
+</ol>
+<ul>
+<li><strong>解题步骤</strong>：</li>
+</ul>
+<img src="https://ccccooh.oss-cn-hangzhou.aliyuncs.com/img/%E4%B8%89%E6%9E%81%E7%AE%A1.jpg" style="zoom:15%;" />
+
+    </div>
+    <div id="menu-container">
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%AD%A3%E6%96%87"><span class="toc-text">正文</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%80%83%E7%82%B9%E6%8E%A8%E6%96%AD%EF%BC%88Deduction%EF%BC%89"><span class="toc-text">考点推断（Deduction）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E5%80%BC%E8%AE%A1%E7%AE%97"><span class="toc-text">分值计算</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%8D%E4%B9%A0%E6%80%9D%E8%B7%AF%E5%9C%B0%E5%9B%BE"><span class="toc-text">复习思路地图</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%BB%E8%BE%91%E4%BB%A3%E6%95%B0%E5%9F%BA%E6%9C%AC%E8%BF%90%E7%AE%97"><span class="toc-text">逻辑代数基本运算</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%93%E5%90%88%E5%BE%8B"><span class="toc-text">结合律</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%91%A9%E6%A0%B9%E5%AE%9A%E7%90%86%EF%BC%88%E5%8F%8D%E6%BC%94%E5%BE%8B%EF%BC%89"><span class="toc-text">摩根定理（反演律）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%BB%E8%BE%91%E4%BB%A3%E6%95%B0%E5%B8%B8%E7%94%A8%E5%85%AC%E5%BC%8F"><span class="toc-text">逻辑代数常用公式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%B8%E6%94%B6%E5%BE%8B"><span class="toc-text">吸收律</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%97%E4%BD%99%E5%BE%8B"><span class="toc-text">冗余律</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%80%E5%B0%8F%E9%A1%B9"><span class="toc-text">最小项</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A0%81%E5%88%B6"><span class="toc-text">码制</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BC%96%E7%A0%81%E6%96%B9%E5%BC%8F"><span class="toc-text">编码方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8E%9F%E7%A0%81%E3%80%81%E5%8F%8D%E7%A0%81%E5%92%8C%E8%A1%A5%E7%A0%81"><span class="toc-text">原码、反码和补码</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E9%80%BB%E8%BE%91%E7%AC%A6%E5%8F%B7"><span class="toc-text">基本逻辑符号</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8A%A0%E6%B3%95%E5%99%A8"><span class="toc-text">加法器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%8A%E5%8A%A0%E5%99%A8"><span class="toc-text">半加器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%A8%E5%8A%A0%E5%99%A8"><span class="toc-text">全加器</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3%E7%BA%BF8%E7%BA%BF%E7%BC%96%E7%A0%81%E5%99%A8"><span class="toc-text">3线8线编码器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E4%B8%AA%E8%A7%A6%E5%8F%91%E5%99%A8"><span class="toc-text">四个触发器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#RS-%E8%A7%A6%E5%8F%91%E5%99%A8"><span class="toc-text">RS 触发器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JK-%E8%A7%A6%E5%8F%91%E5%99%A8"><span class="toc-text">JK 触发器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#D-%E8%A7%A6%E5%8F%91%E5%99%A8"><span class="toc-text">D 触发器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#T-%E8%A7%A6%E5%8F%91%E5%99%A8"><span class="toc-text">T 触发器</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E6%9E%81%E7%AE%A1%E5%92%8C%E4%BA%8C%E6%9E%81%E7%AE%A1"><span class="toc-text">三极管和二极管</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E6%9E%81%E7%AE%A1"><span class="toc-text">三极管</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%9F%E6%9C%AB%E5%A4%A7%E9%A2%98%EF%BC%88%E4%B8%80%EF%BC%89"><span class="toc-text">期末大题（一）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%9F%E6%9C%AB%E5%A4%A7%E9%A2%98%EF%BC%88%E4%BA%8C%EF%BC%89"><span class="toc-text">期末大题（二）</span></a></li></ol></li></ol>
+</div>
+</div>
+
+</body>
+</html>
